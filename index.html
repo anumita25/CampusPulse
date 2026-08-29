@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusPulse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="phone">
+  <div class="toast" id="toast">
+    <div class="ic">🔔</div>
+    <div><div class="tt">Leave now</div><div class="tb">8 min walk gets you there on time.</div></div>
+  </div>
+
+
+  <div id="splash" class="screen active" onclick="go('hub')">
+    <div class="logo-pulse">
+      <svg class="heart-svg" viewBox="0 0 100 40"><path d="M0,20 L25,20 L32,5 L42,35 L50,20 L100,20"/></svg>
+    </div>
+    <h1>CampusPulse</h1>
+    <p>know before you go</p>
+    <div class="tap-hint">tap to enter</div>
+  </div>
+
+  <div id="hub" class="screen" style="position:relative;">
+    <div class="map-fab" onclick="go('campus-map')">🗺️</div>
+    <div class="hub-header">
+      <h2>Good afternoon</h2>
+      <p>4 live campus services</p>
+    </div>
+    <div class="hub-grid">
+      <div class="hub-card" onclick="go('mess-select')">
+        <div class="hub-left"><div class="hub-icon">🍽️</div>
+          <div><div class="hub-name">Mess</div><div class="hub-meta">SJT block · ~14 min wait</div></div></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+          <span class="badge high">High</span>
+          <div class="wave" style="color:var(--coral)"><span style="animation-delay:0s"></span><span style="animation-delay:.1s"></span><span style="animation-delay:.2s"></span><span style="animation-delay:.3s"></span></div>
+        </div>
+      </div>
+      <div class="hub-card" onclick="go('lb-printing')">
+        <div class="hub-left"><div class="hub-icon">🖨️</div>
+          <div><div class="hub-name">Printing</div><div class="hub-meta">4 shops nearby</div></div></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+          <span class="badge med">Med</span>
+          <div class="wave" style="color:var(--amber)"><span style="animation-delay:0s"></span><span style="animation-delay:.1s"></span><span style="animation-delay:.2s"></span><span style="animation-delay:.3s"></span></div>
+        </div>
+      </div>
+      <div class="hub-card" onclick="go('lb-canteen')">
+        <div class="hub-left"><div class="hub-icon">☕</div>
+          <div><div class="hub-name">Canteens</div><div class="hub-meta">6 canteens open</div></div></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+          <span class="badge med">Med</span>
+          <div class="wave" style="color:var(--amber)"><span style="animation-delay:0s"></span><span style="animation-delay:.1s"></span><span style="animation-delay:.2s"></span><span style="animation-delay:.3s"></span></div>
+        </div>
+      </div>
+      <div class="hub-card" onclick="go('sports-list')">
+        <div class="hub-left"><div class="hub-icon">🏸</div>
+          <div><div class="hub-name">Sports grounds</div><div class="hub-meta">3 of 8 open now</div></div></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+          <span class="badge low">Open</span>
+          <div class="wave" style="color:var(--teal)"><span style="animation-delay:0s"></span><span style="animation-delay:.1s"></span><span style="animation-delay:.2s"></span><span style="animation-delay:.3s"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="campus-map" class="screen">
+    <div class="topbar"><div class="back" onclick="go('hub')">←</div><div><h2>Campus map</h2><div class="sub">all locations at a glance</div></div></div>
+    <div class="campus-map">
+      <div class="cm-pin you" style="top:210px;left:150px;"></div>
+      <div class="cm-lbl" style="top:210px;left:150px;">You</div>
+
+      <div class="cm-pin" style="background:var(--amber);top:120px;left:90px;"></div>
+      <div class="cm-lbl" style="top:120px;left:90px;">SJT Mess</div>
+      <div class="cm-pin" style="background:var(--amber);top:70px;left:230px;"></div>
+      <div class="cm-lbl" style="top:70px;left:230px;">MG Mess</div>
+
+      <div class="cm-pin" style="background:var(--teal);top:150px;left:250px;"></div>
+      <div class="cm-lbl" style="top:150px;left:250px;">Quick Xerox, TT</div>
+      <div class="cm-pin" style="background:var(--teal);top:270px;left:80px;"></div>
+      <div class="cm-lbl" style="top:270px;left:80px;">Campus Copy</div>
+      <div class="cm-pin" style="background:var(--teal);top:100px;left:180px;"></div>
+      <div class="cm-lbl" style="top:100px;left:180px;">SJT Print Hub</div>
+
+      <div class="cm-pin" style="background:var(--coral);top:300px;left:200px;"></div>
+      <div class="cm-lbl" style="top:300px;left:200px;">Foodys</div>
+      <div class="cm-pin" style="background:var(--coral);top:330px;left:100px;"></div>
+      <div class="cm-lbl" style="top:330px;left:100px;">Dominos, TT</div>
+      <div class="cm-pin" style="background:var(--coral);top:60px;left:130px;"></div>
+      <div class="cm-lbl" style="top:60px;left:130px;">Junction Canteen</div>
+
+      <div class="cm-pin" style="background:#6EA8FE;top:40px;left:270px;"></div>
+      <div class="cm-lbl" style="top:40px;left:270px;">Basketball, SMV</div>
+      <div class="cm-pin" style="background:#6EA8FE;top:340px;left:260px;"></div>
+      <div class="cm-lbl" style="top:340px;left:260px;">Badminton, TT</div>
+      <div class="cm-pin" style="background:#6EA8FE;top:190px;left:40px;"></div>
+      <div class="cm-lbl" style="top:190px;left:40px;">Football ground</div>
+    </div>
+    <div class="map-legend">
+      <div class="leg-item"><span class="leg-dot" style="background:var(--text)"></span>You</div>
+      <div class="leg-item"><span class="leg-dot" style="background:var(--amber)"></span>Mess</div>
+      <div class="leg-item"><span class="leg-dot" style="background:var(--teal)"></span>Printing</div>
+      <div class="leg-item"><span class="leg-dot" style="background:var(--coral)"></span>Canteens</div>
+      <div class="leg-item"><span class="leg-dot" style="background:#6EA8FE"></span>Sports</div>
+    </div>
+    <div class="sub" style="margin-bottom:6px;">Tap any pin to jump to that service — wired to real coordinates once VIT block data comes in.</div>
+  </div>
+
+  <div id="mess-select" class="screen">
+    <div class="topbar"><div class="back" onclick="go('hub')">←</div><div><h2>Mess</h2><div class="sub">select your block</div></div></div>
+    <div class="field"><label>Your mess block</label>
+      <div class="opt-grid">
+        <div class="opt sel">SJT Mess</div><div class="opt">MG Mess</div>
+        <div class="opt">CDMM Mess</div><div class="opt">GDN Mess</div>
+      </div>
+    </div>
+    <div class="field"><label>Meal</label>
+      <div class="opt-grid">
+        <div class="opt">Breakfast</div><div class="opt sel">Lunch</div>
+      </div>
+    </div>
+    <button class="primary-btn" onclick="go('mess-status')">Check crowd &amp; wait time</button>
+  </div>
+
+  <div id="mess-status" class="screen">
+    <div class="topbar"><div class="back" onclick="go('mess-select')">←</div><div><h2>SJT Mess</h2><div class="sub">lunch · live status</div></div></div>
+    <div class="status-card">
+      <div class="status-row">
+        <div><div class="hub-meta" style="margin-bottom:4px;">Current crowd</div><span class="badge high">High</span></div>
+        <div class="big-wave"><span style="animation-delay:0s"></span><span style="animation-delay:.1s"></span><span style="animation-delay:.2s"></span><span style="animation-delay:.3s"></span><span style="animation-delay:.4s"></span><span style="animation-delay:.5s"></span></div>
+      </div>
+    </div>
+    <div class="mini-map">
+      <div class="map-line" style="top:88px;left:34px;width:150px;transform:rotate(-28deg);"></div>
+      <div class="map-pin you" style="top:88px;left:34px;"></div>
+      <div class="map-pin-lbl" style="top:96px;left:14px;">You</div>
+      <div class="map-pin dest" style="top:36px;left:180px;"></div>
+      <div class="map-pin-lbl" style="top:20px;left:168px;">SJT Mess</div>
+      <div class="map-label">6 min walk · 420 m</div>
+    </div>
+    <div class="dir-btn-row">
+      <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=VIT+Vellore+SJT+Mess&travelmode=walking" target="_blank" rel="noopener">🧭 Directions</a>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><div class="num">14 min</div><div class="lbl">est. wait</div></div>
+      <div class="stat"><div class="num">6 min</div><div class="lbl">your walk</div></div>
+    </div>
+    <div class="leave-tip">Leave in 8 min to arrive right as your token gets called.</div>
+    <button class="primary-btn" onclick="go('mess-token')">Get token</button>
+  </div>
+
+  <div id="mess-token" class="screen">
+    <div class="topbar"><div class="back" onclick="go('mess-status')">←</div><div><h2>Your token</h2><div class="sub">SJT Mess · lunch</div></div></div>
+    <div class="status-card token-big">
+      <div class="token-num mono">#47</div>
+      <div class="token-lbl">now serving #38</div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><div class="num">~12 min</div><div class="lbl">until called</div></div>
+      <div class="stat"><div class="num">9</div><div class="lbl">people ahead</div></div>
+    </div>
+    <button class="danger-btn" onclick="cancelToken()">No-show / cancel token</button>
+    <button class="ghost-btn" onclick="go('hub')">Back to hub</button>
+  </div>
+
+  <div id="lb-printing" class="screen">
+    <div class="topbar"><div class="back" onclick="go('hub')">←</div><div><h2>Printing</h2><div class="sub">ranked by facility score</div></div></div>
+    <div class="mini-map">
+      <div class="map-line" style="top:95px;left:26px;width:120px;transform:rotate(-18deg);"></div>
+      <div class="map-pin you" style="top:95px;left:26px;"></div>
+      <div class="map-pin-lbl" style="top:103px;left:6px;">You</div>
+      <div class="map-pin dest" style="top:58px;left:140px;"></div>
+      <div class="map-pin-lbl" style="top:42px;left:128px;">Quick Xerox</div>
+      <div class="map-line" style="top:95px;left:26px;width:210px;transform:rotate(6deg);opacity:0.3;"></div>
+      <div class="map-pin dest" style="top:118px;left:230px;"></div>
+      <div class="map-pin-lbl" style="top:100px;left:200px;">Campus Copy</div>
+      <div class="map-label">4 shops nearby</div>
+    </div>
+    <div class="lb-item best">
+      <div><span class="ribbon">Best match</span><br><span class="lb-rank">01</span> <span class="lb-name">Quick Xerox, TT</span><div class="lb-score">2 min walk · no wait</div>
+        <div class="lb-actions">
+          <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=VIT+Vellore+Quick+Xerox+TT&travelmode=walking" target="_blank" rel="noopener">🧭 Directions</a>
+          <button class="token-btn" onclick="getToken('printing','Quick Xerox, TT',5,3,'~2 min',2,'jobs ahead')">Get token</button>
+        </div></div>
+      <div class="score-num">9.6</div>
+    </div>
+    <div class="lb-item">
+      <div><span class="lb-rank">02</span> <span class="lb-name">Campus Copy Point</span><div class="lb-score">6 min walk · 3 min wait</div>
+        <div class="lb-actions">
+          <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=VIT+Vellore+Campus+Copy+Point&travelmode=walking" target="_blank" rel="noopener">🧭 Directions</a>
+          <button class="token-btn" onclick="getToken('printing','Campus Copy Point',21,18,'~4 min',3,'jobs ahead')">Get token</button>
+        </div></div>
+      <div class="score-num">7.8</div>
+    </div>
+    <div class="lb-item">
+      <div><span class="lb-rank">03</span> <span class="lb-name">SJT Print Hub</span><div class="lb-score">3 min walk · 11 min wait</div>
+        <div class="lb-actions">
+          <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=VIT+Vellore+SJT+Print+Hub&travelmode=walking" target="_blank" rel="noopener">🧭 Directions</a>
+          <button class="token-btn" onclick="getToken('printing','SJT Print Hub',14,7,'~11 min',7,'jobs ahead')">Get token</button>
+        </div></div>
+      <div class="score-num">6.4</div>
+    </div>
+    <div class="lb-item">
+      <div><span class="lb-rank">04</span> <span class="lb-name">MG Xerox Center</span><div class="lb-score">9 min walk · 2 min wait</div>
+        <div class="lb-actions">
+          <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=VIT+Vellore+MG+Xerox+Center&travelmode=walking" target="_blank" rel="noopener">🧭 Directions</a>
+          <button class="token-btn" onclick="getToken('printing','MG Xerox Center',9,7,'~2 min',2,'jobs ahead')">Get token</button>
+        </div></div>
+      <div class="score-num">5.9</div>
+    </div>
+  </div>
+
+  <div id="printing-token" class="screen">
+    <div class="topbar"><div class="back" onclick="go('lb-printing')">←</div><div><h2>Your token</h2><div class="sub" id="printing-token-sub">Quick Xerox, TT</div></div></div>
+    <div class="status-card token-big">
+      <div class="token-num mono" id="printing-token-num">#05</div>
+      <div class="token-lbl" id="printing-token-lbl">now serving #03</div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><div class="num" id="printing-token-until">~2 min</div><div class="lbl">until called</div></div>
+      <div class="stat"><div class="num" id="printing-token-ahead">2</div><div class="lbl" id="printing-token-ahead-lbl">jobs ahead</div></div>
+    </div>
+    <button class="danger-btn" onclick="cancelToken()">No-show / cancel token</button>
+    <button class="ghost-btn" onclick="go('hub')">Back to hub</button>
+  </div>
+
+  <div id="lb-canteen" class="screen">
+    <div class="topbar"><div class="back" onclick="go('hub')">←</div><div><h2>Canteens</h2><div class="sub">ranked by facility score</div></div></div>
+    <div class="mini-map">
+      <div class="map-line" style="top:100px;left:30px;width:130px;transform:rotate(-22deg);"></div>
+      <div class="map-pin you" style="top:100px;left:30px;"></div>
+      <div class="map-pin-lbl" style="top:108px;left:10px;">You</div>
+      <div class="map-pin dest" style="top:52px;left:150px;"></div>
+      <div class="map-pin-lbl" style="top:36px;left:138px;">Foodys</div>
+      <div class="map-line" style="top:100px;left:30px;width:220px;transform:rotate(4deg);opacity:0.3;"></div>
+      <div class="map-pin dest" style="top:120px;left:245px;"></div>
+      <div class="map-pin-lbl" style="top:104px;left:210px;">Dominos, TT</div>
+      <div class="map-label">6 canteens open</div>
+    </div>
+    <div class="lb-item best">
+      <div><span class="ribbon">Best match</span><br><span class="lb-rank">01</span> <span class="lb-name">Foodys, Foodcourt</span><div class="lb-score">3 min walk · 2 min wait</div>
+        <div class="lb-actions">
+          <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=VIT+Vellore+Foodys+Foodcourt&travelmode=walking" target="_blank" rel="noopener">🧭 Directions</a>
+          <button class="token-btn" onclick="getToken('canteen','Foodys, Foodcourt',19,16,'~4 min',3,'orders ahead')">Get token</button>
+        </div></div>
+      <div class="score-num">9.1</div>
+    </div>
+    <div class="lb-item">
+      <div><span class="lb-rank">02</span> <span class="lb-name">Dominos, TT</span><div class="lb-score">6 min walk · no wait</div>
+        <div class="lb-actions">
+          <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=VIT+Vellore+Dominos+TT&travelmode=walking" target="_blank" rel="noopener">🧭 Directions</a>
+          <button class="token-btn" onclick="getToken('canteen','Dominos, TT',8,8,'~1 min',0,'orders ahead')">Get token</button>
+        </div></div>
+      <div class="score-num">8.4</div>
+    </div>
+    <div class="lb-item">
+      <div><span class="lb-rank">03</span> <span class="lb-name">Junction Canteen</span><div class="lb-score">4 min walk · 12 min wait</div>
+        <div class="lb-actions">
+          <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=VIT+Vellore+Junction+Canteen&travelmode=walking" target="_blank" rel="noopener">🧭 Directions</a>
+          <button class="token-btn" onclick="getToken('canteen','Junction Canteen',27,15,'~12 min',12,'orders ahead')">Get token</button>
+        </div></div>
+      <div class="score-num">6.0</div>
+    </div>
+    <div class="lb-item">
+      <div><span class="lb-rank">04</span> <span class="lb-name">CDMM Canteen</span><div class="lb-score">10 min walk · 3 min wait</div>
+        <div class="lb-actions">
+          <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=VIT+Vellore+CDMM+Canteen&travelmode=walking" target="_blank" rel="noopener">🧭 Directions</a>
+          <button class="token-btn" onclick="getToken('canteen','CDMM Canteen',11,8,'~3 min',3,'orders ahead')">Get token</button>
+        </div></div>
+      <div class="score-num">5.5</div>
+    </div>
+  </div>
+
+  <div id="canteen-token" class="screen">
+    <div class="topbar"><div class="back" onclick="go('lb-canteen')">←</div><div><h2>Your token</h2><div class="sub" id="canteen-token-sub">Foodys, Foodcourt</div></div></div>
+    <div class="status-card token-big">
+      <div class="token-num mono" id="canteen-token-num">#19</div>
+      <div class="token-lbl" id="canteen-token-lbl">now serving #16</div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><div class="num" id="canteen-token-until">~4 min</div><div class="lbl">until called</div></div>
+      <div class="stat"><div class="num" id="canteen-token-ahead">3</div><div class="lbl" id="canteen-token-ahead-lbl">orders ahead</div></div>
+    </div>
+    <button class="danger-btn" onclick="cancelToken()">No-show / cancel token</button>
+    <button class="ghost-btn" onclick="go('hub')">Back to hub</button>
+  </div>
+  <div id="sports-list" class="screen">
+    <div class="topbar"><div class="back" onclick="go('hub')">←</div><div><h2>Sports grounds</h2><div class="sub">3 of 8 open now</div></div></div>
+    <div class="mini-map">
+      <div class="map-pin you" style="top:70px;left:150px;"></div>
+      <div class="map-pin-lbl" style="top:78px;left:130px;">You</div>
+      <div class="map-line" style="top:70px;left:150px;width:80px;transform:rotate(-40deg);"></div>
+      <div class="map-pin dest" style="top:34px;left:210px;"></div>
+      <div class="map-pin-lbl" style="top:18px;left:192px;">Basketball</div>
+      <div class="map-line" style="top:70px;left:150px;width:90px;transform:rotate(150deg);opacity:0.4;"></div>
+      <div class="map-pin dest" style="top:95px;left:72px;"></div>
+      <div class="map-pin-lbl" style="top:104px;left:38px;">Badminton</div>
+      <div class="map-label">3 grounds open now</div>
+    </div>
+    <div class="ground-card">
+      <div class="ground-top">
+        <div><div class="ground-name">Basketball court, SMV</div><div class="ground-meta">4 min walk · best match for basketball</div></div>
+        <span class="badge low">Open</span>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button class="book-btn" onclick="go('sports-slot')">Book a slot</button>
+        <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=VIT+Vellore+SMV+Basketball+Court&travelmode=walking" target="_blank" rel="noopener">🧭 Directions</a>
+      </div>
+    </div>
+    <div class="ground-card">
+      <div class="ground-top">
+        <div><div class="ground-name">Badminton hall, TT</div><div class="ground-meta">7 min walk · 2 courts free</div></div>
+        <span class="badge low">Open</span>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button class="book-btn" onclick="go('sports-slot')">Book a slot</button>
+        <a class="dir-btn" href="https://www.google.com/maps/dir/?api=1&destination=VIT+Vellore+Badminton+Hall+TT&travelmode=walking" target="_blank" rel="noopener">🧭 Directions</a>
+      </div>
+    </div>
+    <div class="ground-card">
+      <div class="ground-top">
+        <div><div class="ground-name">Football ground</div><div class="ground-meta">occupied · tournament practice</div></div>
+        <span class="badge closed">Occupied</span>
+      </div>
+      <button class="book-btn" disabled>Unavailable</button>
+    </div>
+    <div class="ground-card">
+      <div class="ground-top">
+        <div><div class="ground-name">Cricket nets, GDN</div><div class="ground-meta">occupied until 6:30 pm</div></div>
+        <span class="badge closed">Occupied</span>
+      </div>
+      <button class="book-btn" disabled>Unavailable</button>
+    </div>
+  </div>
+
+  <div id="sports-slot" class="screen">
+    <div class="topbar"><div class="back" onclick="go('sports-list')">←</div><div><h2>Basketball court, SMV</h2><div class="sub">pick a time slot</div></div></div>
+    <div class="field"><label>Today</label>
+      <div class="slot-grid">
+        <div class="slot taken">4:00 pm</div>
+        <div class="slot sel">4:30 pm</div>
+        <div class="slot">5:00 pm</div>
+        <div class="slot">5:30 pm</div>
+        <div class="slot">6:00 pm</div>
+        <div class="slot taken">6:30 pm</div>
+      </div>
+    </div>
+    <button class="primary-btn" onclick="go('sports-token')">Confirm booking</button>
+  </div>
+
+  <div id="sports-token" class="screen">
+    <div class="topbar"><div class="back" onclick="go('sports-slot')">←</div><div><h2>Booked</h2><div class="sub">Basketball court, SMV</div></div></div>
+    <div class="status-card token-big">
+      <div class="token-num mono">#B-08</div>
+      <div class="token-lbl">4:30 pm slot · 60 min</div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><div class="num">4 min</div><div class="lbl">your walk</div></div>
+      <div class="stat"><div class="num">1</div><div class="lbl">other booking today</div></div>
+    </div>
+    <button class="danger-btn" onclick="cancelToken()">No-show / cancel booking</button>
+    <button class="ghost-btn" onclick="go('hub')">Back to hub</button>
+  </div>
+
+  <div class="nav-dots">
+    <span class="dotref" data-s="splash"></span><span class="dotref" data-s="hub"></span>
+    <span class="dotref" data-s="campus-map"></span>
+    <span class="dotref" data-s="mess-select"></span><span class="dotref" data-s="mess-status"></span>
+    <span class="dotref" data-s="mess-token"></span><span class="dotref" data-s="lb-printing"></span>
+    <span class="dotref" data-s="printing-token"></span><span class="dotref" data-s="lb-canteen"></span>
+    <span class="dotref" data-s="canteen-token"></span><span class="dotref" data-s="sports-list"></span>
+    <span class="dotref" data-s="sports-slot"></span><span class="dotref" data-s="sports-token"></span>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
